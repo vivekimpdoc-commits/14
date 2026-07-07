@@ -16,16 +16,16 @@ public class MeetingsController : ControllerBase
         new Meeting 
         { 
             Id = 1, 
-            Title = "Weekly Engineering Review", 
+            Title = "Weekly Law & Order Review", 
             Date = DateTime.Now.Date,
             Time = new TimeSpan(10, 0, 0),
-            Venue = "HQ, Conference Room A",
+            Venue = "SP Office, Conference Room A",
             MeetingType = "Review",
-            Participants = "CEO, CTO, VP Product",
-            Agenda = "Review of pending deliverables and upcoming Q3 launch",
-            DiscussionSummary = "Discussed stakeholder presentation requirements for next week and backlog of 15 pending tickets in Engineering.",
-            KeyDecisions = "Deploy 2 additional engineers to QA. PMs given 48 hours to update Jira.",
-            RiskPoints = "Shortage of business analysts for Q3 planning."
+            Participants = "SP, ASP, CO City",
+            Agenda = "Review of pending investigations and upcoming VIP movement",
+            DiscussionSummary = "Discussed VIP security arrangements for next week and backlog of 15 pending cases in City Zone.",
+            KeyDecisions = "Deploy 2 additional QRTs at main venue. IOs given 48 hours to submit case diaries.",
+            RiskPoints = "Shortage of female constables for VIP duty."
         }
     };
 

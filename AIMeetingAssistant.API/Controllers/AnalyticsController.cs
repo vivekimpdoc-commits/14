@@ -18,8 +18,8 @@ public class AnalyticsController : ControllerBase
             DepartmentWiseCompletion = new int[] { 85, 92, 78, 95 },
             TopOfficers = new[]
             {
-                new { Name = "Rakesh Kumar", Zone = "Engineering", Completion = 98, Efficiency = 96 },
-                new { Name = "Sunita Devi", Zone = "HR", Completion = 92, Efficiency = 90 }
+                new { Name = "Rakesh Kumar", Zone = "City North", Completion = 98, Efficiency = 96 },
+                new { Name = "Sunita Devi", Zone = "Traffic", Completion = 92, Efficiency = 90 }
             }
         };
 

@@ -16,22 +16,22 @@ public class DecisionsController : ControllerBase
         { 
             Id = 1, 
             DecisionIdStr = "#DEC-901", 
-            Description = "Deploy 2 Additional Analysts", 
-            TakenBy = "CEO", 
+            Description = "Deploy 2 Additional QRTs", 
+            TakenBy = "SP Officer", 
             DateTaken = DateTime.Now.Date, 
             Status = "Implemented", 
-            VerifiedBy = "Board",
+            VerifiedBy = "DIG Zone",
             MeetingId = 1
         },
         new Decision 
         { 
             Id = 2, 
             DecisionIdStr = "#DEC-902", 
-            Description = "Reassign PM for Project Alpha delay", 
-            TakenBy = "Marketing Head", 
+            Description = "Suspend IO for FIR #204 delay", 
+            TakenBy = "CO City", 
             DateTaken = DateTime.Now.Date, 
             Status = "Pending Auth", 
-            VerifiedBy = "CEO",
+            VerifiedBy = "SP Officer",
             MeetingId = 1
         }
     };

@@ -16,8 +16,8 @@ public class TasksController : ControllerBase
         new ActionTask 
         { 
             Id = 1, 
-            Title = "Update Q3 Financial Report", 
-            Description = "Project Alpha needs immediate attention before stakeholder pitch.",
+            Title = "Update Investigation Report", 
+            Description = "Case #4582 needs immediate attention before court date.",
             AssignedOfficerId = 1,
             Priority = "High",
             DueDate = DateTime.Now.AddDays(3),
@@ -28,8 +28,8 @@ public class TasksController : ControllerBase
         new ActionTask 
         { 
             Id = 2, 
-            Title = "Prepare Client Presentation", 
-            Description = "Global Tech Pitch requires slides on Q2 metrics.",
+            Title = "Collect CCTV Footage", 
+            Description = "City Mall incident requires footage from Gate 2 & 3.",
             AssignedOfficerId = 2,
             Priority = "Critical",
             DueDate = DateTime.Now.AddDays(1),
