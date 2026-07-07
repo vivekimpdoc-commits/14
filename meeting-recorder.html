@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Recorder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container-fluid min-vh-100 d-flex flex-column p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="index.html" class="btn btn-outline-light rounded-pill px-4"><i class="fa-solid fa-arrow-left me-2"></i> Back to Dashboard</a>
+            <h3 class="text-white fw-bold mb-0">AI Live Meeting Recorder</h3>
+            <div class="badge bg-danger rounded-pill px-3 py-2 fs-6">
+                <i class="fa-solid fa-circle text-white me-2" style="animation: pulse 1s infinite alternate;"></i> Live Recording
+            </div>
+        </div>
+
+        <div class="row flex-grow-1 g-4">
+            <!-- Audio Visualizer and Controls -->
+            <div class="col-lg-7 d-flex flex-column">
+                <div class="glass-card p-4 rounded-4 flex-grow-1 d-flex flex-column justify-content-center align-items-center position-relative">
+                    
+                    <h2 class="text-white-50 mb-5">01:24:05</h2>
+                    
+                    <!-- Fake Audio Visualizer -->
+                    <div class="d-flex align-items-end mb-5" style="height: 100px; gap: 5px;">
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 30%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 60%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 90%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 40%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 100%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 70%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 50%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 80%;"></div>
+                        <div class="bg-primary rounded-pill" style="width: 15px; height: 30%;"></div>
+                    </div>
+
+                    <div class="d-flex gap-4">
+                        <button class="btn btn-outline-light rounded-circle" style="width: 60px; height: 60px;"><i class="fa-solid fa-pause fs-4"></i></button>
+                        <button class="btn btn-danger rounded-circle shadow-lg" style="width: 80px; height: 80px;"><i class="fa-solid fa-stop fs-2"></i></button>
+                        <button class="btn btn-outline-light rounded-circle" style="width: 60px; height: 60px;"><i class="fa-solid fa-microphone-slash fs-4"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Transcript -->
+            <div class="col-lg-5">
+                <div class="glass-card p-4 rounded-4 h-100 d-flex flex-column">
+                    <h5 class="text-white fw-bold mb-4"><i class="fa-solid fa-closed-captioning text-info me-2"></i> Live AI Transcript (Bilingual)</h5>
+                    
+                    <div class="flex-grow-1 overflow-auto pe-2" style="max-height: 500px;">
+                        <div class="mb-4">
+                            <span class="badge bg-primary mb-2">SP Officer</span> <span class="text-white-50 small ms-2">10:45 AM</span>
+                            <p class="text-white">Let's discuss the VIP movement scheduled for tomorrow. Are the QRTs deployed?</p>
+                        </div>
+                        <div class="mb-4">
+                            <span class="badge bg-danger mb-2">SHO City</span> <span class="text-white-50 small ms-2">10:46 AM</span>
+                            <p class="text-white">Yes sir. हमने 2 QRTs तैनात कर दी हैं। (We have deployed 2 QRTs.)</p>
+                        </div>
+                        <div class="mb-4">
+                            <span class="badge bg-primary mb-2">SP Officer</span> <span class="text-white-50 small ms-2">10:47 AM</span>
+                            <p class="text-white">Good. What about the pending investigation in FIR #204?</p>
+                        </div>
+                        <div class="mb-4 position-relative">
+                            <span class="badge bg-warning text-dark mb-2">IO Ramesh</span> <span class="text-white-50 small ms-2">10:48 AM</span>
+                            <div class="spinner-grow spinner-grow-sm text-info ms-2" role="status"></div>
+                            <p class="text-white-50">Transcribing...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</body>
+</html>

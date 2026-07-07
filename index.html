@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Assistant (Enterprise)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    
+    <!-- Background Elements for Glassmorphism -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="glass-sidebar" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 fs-4 fw-bold text-white">
+                <i class="fa-solid fa-microphone-lines text-primary me-2"></i>
+                <span data-i18n="app_title">AI Assistant</span>
+            </div>
+            <div class="list-group list-group-flush mt-3 px-3">
+                <a href="index.html" class="list-group-item list-group-item-action bg-transparent text-white active-nav rounded mb-2">
+                    <i class="fa-solid fa-chart-pie me-2"></i> <span data-i18n="nav_dashboard">Dashboard</span>
+                </a>
+                <a href="meeting-recorder.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-record-vinyl me-2"></i> <span data-i18n="nav_recorder">Meeting Recorder</span>
+                </a>
+                <a href="reports.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-file-signature me-2"></i> <span data-i18n="nav_mom">Auto MoM & Reports</span>
+                </a>
+                <a href="tasks.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-tasks me-2"></i> <span data-i18n="nav_tasks">Task Generator</span>
+                </a>
+                <a href="raci.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-users-gear me-2"></i> <span data-i18n="nav_raci">RACI Matrix</span>
+                </a>
+                <a href="risk.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-shield-halved me-2"></i> <span data-i18n="nav_risk">Risk Detection</span>
+                </a>
+                <a href="performance.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-chart-line me-2"></i> <span>Performance</span>
+                </a>
+                <a href="search.html" class="list-group-item list-group-item-action bg-transparent text-white rounded mb-2">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i> <span>AI Search</span>
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="w-100">
+            
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg glass-navbar px-4 py-3 mb-4">
+                <div class="container-fluid">
+                    <button class="btn btn-primary glass-btn" id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+                    
+                    <div class="d-flex align-items-center ms-auto">
+                        <div class="language-switch me-4">
+                            <input type="checkbox" id="lang-toggle" class="checkbox">
+                            <label for="lang-toggle" class="label">
+                                <span class="en">EN</span>
+                                <span class="hi">हि</span>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <div class="user-profile d-flex align-items-center">
+                            <img src="https://ui-avatars.com/api/?name=SP+Officer&background=0D8ABC&color=fff" alt="User" class="rounded-circle me-2" width="40">
+                            <div>
+                                <h6 class="mb-0 text-white fw-bold">SP Officer</h6>
+                                <small class="text-white-50" data-i18n="role_superadmin">Super Admin</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Dashboard Content -->
+            <div class="container-fluid px-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="text-white fw-bold" data-i18n="dashboard_title">Executive Dashboard</h2>
+                    <button class="btn btn-primary premium-btn">
+                        <i class="fa-solid fa-plus me-2"></i> <span data-i18n="btn_new_meeting">New AI Meeting</span>
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="glass-card p-4 rounded-4 stat-card border-left-primary">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="text-white-50 mb-1" data-i18n="stat_total_meetings">Total Meetings</h6>
+                                    <h2 class="text-white fw-bold mb-0">124</h2>
+                                </div>
+                                <div class="icon-box bg-primary text-white">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-success small">
+                                <i class="fa-solid fa-arrow-trend-up"></i> <span data-i18n="stat_up">12% this month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="glass-card p-4 rounded-4 stat-card border-left-warning">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="text-white-50 mb-1" data-i18n="stat_pending_decisions">Pending Decisions</h6>
+                                    <h2 class="text-white fw-bold mb-0">38</h2>
+                                </div>
+                                <div class="icon-box bg-warning text-white">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-warning small">
+                                <i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="stat_attention">Requires attention</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="glass-card p-4 rounded-4 stat-card border-left-danger">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="text-white-50 mb-1" data-i18n="stat_delayed_tasks">Delayed Tasks</h6>
+                                    <h2 class="text-white fw-bold mb-0">15</h2>
+                                </div>
+                                <div class="icon-box bg-danger text-white">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-danger small">
+                                <i class="fa-solid fa-arrow-trend-up"></i> <span data-i18n="stat_critical">5 Critical</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="glass-card p-4 rounded-4 stat-card border-left-success">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="text-white-50 mb-1" data-i18n="stat_performance">Performance Score</h6>
+                                    <h2 class="text-white fw-bold mb-0">92%</h2>
+                                </div>
+                                <div class="icon-box bg-success text-white">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-success small">
+                                <i class="fa-solid fa-check-circle"></i> <span data-i18n="stat_excellent">Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Row -->
+                <div class="row g-4">
+                    <!-- AI Smart Summary & Tasks -->
+                    <div class="col-lg-8">
+                        <div class="glass-card p-4 rounded-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="text-white fw-bold mb-0" data-i18n="section_recent_tasks">Recent AI Generated Tasks</h5>
+                                <button class="btn btn-sm btn-outline-light rounded-pill px-3" data-i18n="btn_view_all">View All</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-hover glass-table mb-0 align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th data-i18n="th_task">Task</th>
+                                            <th data-i18n="th_assigned">Assigned To</th>
+                                            <th data-i18n="th_priority">Priority</th>
+                                            <th data-i18n="th_status">Status</th>
+                                            <th data-i18n="th_progress">Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="fw-bold">Update Investigation Report</div>
+                                                <small class="text-white-50">Case #4582</small>
+                                            </td>
+                                            <td>Circle Officer</td>
+                                            <td><span class="badge bg-danger rounded-pill">High</span></td>
+                                            <td>Pending</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-2 small">30%</span>
+                                                    <div class="progress flex-grow-1" style="height: 6px; background-color: rgba(255,255,255,0.1);">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 30%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="fw-bold">Collect CCTV Footage</div>
+                                                <small class="text-white-50">City Mall Incident</small>
+                                            </td>
+                                            <td>Investigation Officer</td>
+                                            <td><span class="badge bg-warning text-dark rounded-pill">Critical</span></td>
+                                            <td>In Progress</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-2 small">60%</span>
+                                                    <div class="progress flex-grow-1" style="height: 6px; background-color: rgba(255,255,255,0.1);">
+                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="fw-bold">Prepare Action Sheet</div>
+                                                <small class="text-white-50">Weekly Law & Order</small>
+                                            </td>
+                                            <td>SHO</td>
+                                            <td><span class="badge bg-info rounded-pill">Medium</span></td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-2 small">100%</span>
+                                                    <div class="progress flex-grow-1" style="height: 6px; background-color: rgba(255,255,255,0.1);">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Risk & Recommendations -->
+                    <div class="col-lg-4">
+                        <div class="glass-card p-4 rounded-4 mb-4">
+                            <h5 class="text-white fw-bold mb-4">
+                                <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i> <span data-i18n="section_risk">AI Risk Detection</span>
+                            </h5>
+                            <div class="risk-item p-3 mb-3 rounded border border-danger border-opacity-25 bg-danger bg-opacity-10">
+                                <h6 class="text-danger fw-bold mb-1">Delayed Investigation</h6>
+                                <p class="text-white-50 small mb-0">FIR #204 - Assigned to IO Ramesh. Overdue by 3 days.</p>
+                            </div>
+                            <div class="risk-item p-3 rounded border border-warning border-opacity-25 bg-warning bg-opacity-10">
+                                <h6 class="text-warning fw-bold mb-1">Resource Shortage</h6>
+                                <p class="text-white-50 small mb-0">High pending decisions in Zone B.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-4">
+                            <h5 class="text-white fw-bold mb-4">
+                                <i class="fa-solid fa-lightbulb text-info me-2"></i> <span data-i18n="section_recommend">AI Recommendation</span>
+                            </h5>
+                            <ul class="list-unstyled mb-0 recommendation-list">
+                                <li class="mb-3 text-white-50 d-flex">
+                                    <i class="fa-solid fa-arrow-right text-info mt-1 me-2"></i>
+                                    <span>Escalate FIR #204 to SP.</span>
+                                </li>
+                                <li class="text-white-50 d-flex">
+                                    <i class="fa-solid fa-arrow-right text-info mt-1 me-2"></i>
+                                    <span>Assign 2 more officers to VIP Duty tracking.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RACI Matrix Preview -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="glass-card p-4 rounded-4">
+                            <h5 class="text-white fw-bold mb-4" data-i18n="section_raci">AI Responsibility Matrix (RACI)</h5>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-bordered border-secondary glass-table text-center align-middle">
+                                    <thead class="table-active text-white-50">
+                                        <tr>
+                                            <th class="text-start" data-i18n="th_work">Work</th>
+                                            <th data-i18n="th_responsible">Responsible (R)</th>
+                                            <th data-i18n="th_accountable">Accountable (A)</th>
+                                            <th data-i18n="th_consulted">Consulted (C)</th>
+                                            <th data-i18n="th_informed">Informed (I)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-start fw-bold">Investigation</td>
+                                            <td><span class="badge bg-primary">IO</span></td>
+                                            <td><span class="badge bg-danger">SHO</span></td>
+                                            <td><span class="badge bg-info">CO</span></td>
+                                            <td><span class="badge bg-secondary">SP</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start fw-bold">Law & Order</td>
+                                            <td><span class="badge bg-primary">SHO</span></td>
+                                            <td><span class="badge bg-danger">CO</span></td>
+                                            <td><span class="badge bg-info">SP</span></td>
+                                            <td><span class="badge bg-secondary">DIG</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start fw-bold">VIP Duty</td>
+                                            <td><span class="badge bg-primary">Inspector</span></td>
+                                            <td><span class="badge bg-danger">CO</span></td>
+                                            <td><span class="badge bg-info">SP</span></td>
+                                            <td><span class="badge bg-secondary">DIG</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

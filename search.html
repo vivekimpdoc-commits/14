@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Search (Semantic)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container-fluid min-vh-100 d-flex flex-column p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="index.html" class="btn btn-outline-light rounded-pill px-4"><i class="fa-solid fa-arrow-left me-2"></i> Back to Dashboard</a>
+            <h3 class="text-white fw-bold mb-0">AI Semantic Knowledge Search</h3>
+            <div class="dropdown">
+                <button class="btn btn-outline-light premium-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-microphone me-2"></i> Voice Search
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark p-3" style="width: 250px;">
+                    <li class="text-center text-white-50 small mb-2">Try saying:</li>
+                    <li class="fst-italic text-info text-center small">"Show pending tasks for PM Ramesh"</li>
+                    <li class="text-center mt-3"><button class="btn btn-danger rounded-circle"><i class="fa-solid fa-microphone"></i></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="glass-card p-2 rounded-pill d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass text-white-50 ms-3 me-2 fs-5"></i>
+                    <input type="text" class="form-control bg-transparent border-0 text-white shadow-none fs-5" placeholder="Search by Employee, Project #, Keyword, or Ask a Question..." value="Project Alpha delays">
+                    <button class="btn btn-primary premium-btn rounded-pill px-4 me-1">Search</button>
+                </div>
+                <div class="d-flex justify-content-center mt-3 gap-2 flex-wrap">
+                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2"><i class="fa-solid fa-hashtag text-info me-1"></i> Case Number</span>
+                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2"><i class="fa-solid fa-user-tie text-primary me-1"></i> Officer</span>
+                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2"><i class="fa-solid fa-calendar text-warning me-1"></i> Date Range</span>
+                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2"><i class="fa-solid fa-location-dot text-danger me-1"></i> Zone/District</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="glass-card p-4 rounded-4">
+                    <div class="d-flex justify-content-between align-items-end mb-4 border-bottom border-secondary border-opacity-25 pb-3">
+                        <h5 class="text-white fw-bold mb-0">AI Answer & Results</h5>
+                        <span class="text-white-50 small">Found 3 relevant records in 0.4 seconds</span>
+                    </div>
+
+                    <!-- Semantic Answer -->
+                    <div class="bg-primary bg-opacity-10 border border-primary border-opacity-50 p-4 rounded mb-4">
+                        <h6 class="text-info fw-bold mb-2"><i class="fa-solid fa-robot me-2"></i> AI Summary Answer</h6>
+                        <p class="text-white mb-0">Based on recent meetings, <strong>Project Alpha</strong> is delayed by 3 days. It was assigned to <strong>PM Ramesh</strong> on 02 July. During the Engineering review on 07 July, it was marked as a High Risk pending task and the AI recommended escalating it to the CEO.</p>
+                    </div>
+
+                    <!-- Exact File Matches -->
+                    <div class="list-group glass-table">
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent border-bottom border-secondary border-opacity-25 py-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="text-white fw-bold mb-1">Weekly Engineering Review</h6>
+                                <small class="text-white-50">07 July 2026</small>
+                            </div>
+                            <p class="mb-1 text-white-50 small">...discussed VIP security arrangements and noted that <mark class="bg-warning px-1 rounded text-dark fw-bold">Project Alpha</mark> is facing <mark class="bg-warning px-1 rounded text-dark fw-bold">delays</mark> due to QA blocks...</p>
+                            <small class="text-primary"><i class="fa-solid fa-file-lines me-1"></i> Match in: Meeting Minutes</small>
+                        </a>
+                        
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent border-bottom border-secondary border-opacity-25 py-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="text-white fw-bold mb-1">Action Task #4582</h6>
+                                <small class="text-warning">Status: Overdue</small>
+                            </div>
+                            <p class="mb-1 text-white-50 small">Submit final test reports for <mark class="bg-warning px-1 rounded text-dark fw-bold">Project Alpha</mark>.</p>
+                            <small class="text-info"><i class="fa-solid fa-list-check me-1"></i> Match in: Task Tracker</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

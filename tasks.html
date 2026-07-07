@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Action & Decision Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container-fluid min-vh-100 d-flex flex-column p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="index.html" class="btn btn-outline-light rounded-pill px-4"><i class="fa-solid fa-arrow-left me-2"></i> Back to Dashboard</a>
+            <h3 class="text-white fw-bold mb-0">AI Decision & Action Tracker</h3>
+            <button class="btn btn-primary premium-btn">
+                <i class="fa-solid fa-file-pdf me-2"></i> Generate Report
+            </button>
+        </div>
+
+        <div class="row g-4 flex-grow-1">
+            <!-- Decision Tracker -->
+            <div class="col-12">
+                <div class="glass-card p-4 rounded-4">
+                    <h5 class="text-white fw-bold mb-4"><i class="fa-solid fa-gavel text-warning me-2"></i> AI Decision Tracker</h5>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover glass-table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Decision ID</th>
+                                    <th>Decision</th>
+                                    <th>Taken By</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Verified By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#DEC-901</td>
+                                    <td class="fw-bold">Deploy 2 Additional QRTs</td>
+                                    <td>SP Officer</td>
+                                    <td>07 July 2026</td>
+                                    <td><span class="badge bg-success">Implemented</span></td>
+                                    <td>DIG Zone</td>
+                                </tr>
+                                <tr>
+                                    <td>#DEC-902</td>
+                                    <td class="fw-bold">Suspend IO for FIR #204 delay</td>
+                                    <td>CO City</td>
+                                    <td>07 July 2026</td>
+                                    <td><span class="badge bg-warning text-dark">Pending Auth</span></td>
+                                    <td>SP Officer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Board -->
+            <div class="col-12">
+                <h5 class="text-white fw-bold mb-4 mt-2"><i class="fa-solid fa-list-check text-info me-2"></i> AI Action Item Tracker (Kanban)</h5>
+                <div class="row g-4">
+                    <!-- Pending -->
+                    <div class="col-md-4">
+                        <div class="glass-card p-3 rounded-4 h-100 bg-opacity-10 bg-secondary">
+                            <h6 class="text-white-50 fw-bold mb-3 d-flex justify-content-between">
+                                PENDING <span class="badge bg-secondary">2</span>
+                            </h6>
+                            
+                            <div class="bg-dark bg-opacity-50 p-3 rounded mb-3 border border-secondary border-opacity-25">
+                                <span class="badge bg-danger mb-2">High Priority</span>
+                                <h6 class="text-white">Update Investigation Report</h6>
+                                <p class="text-white-50 small mb-2">Case #4582 needs immediate attention before court date.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-secondary border-opacity-25">
+                                    <small class="text-white-50"><i class="fa-solid fa-user me-1"></i> Circle Officer</small>
+                                    <small class="text-danger"><i class="fa-solid fa-clock me-1"></i> 10 July</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="col-md-4">
+                        <div class="glass-card p-3 rounded-4 h-100 bg-opacity-10 bg-primary">
+                            <h6 class="text-primary fw-bold mb-3 d-flex justify-content-between">
+                                IN PROGRESS <span class="badge bg-primary">1</span>
+                            </h6>
+                            
+                            <div class="bg-dark bg-opacity-50 p-3 rounded mb-3 border border-primary border-opacity-25">
+                                <span class="badge bg-warning text-dark mb-2">Critical</span>
+                                <h6 class="text-white">Collect CCTV Footage</h6>
+                                <p class="text-white-50 small mb-2">City Mall incident requires footage from Gate 2 & 3.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-secondary border-opacity-25">
+                                    <small class="text-white-50"><i class="fa-solid fa-user me-1"></i> IO Ramesh</small>
+                                    <div class="progress" style="width: 50px; height: 5px;">
+                                        <div class="progress-bar bg-primary" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Completed -->
+                    <div class="col-md-4">
+                        <div class="glass-card p-3 rounded-4 h-100 bg-opacity-10 bg-success">
+                            <h6 class="text-success fw-bold mb-3 d-flex justify-content-between">
+                                COMPLETED <span class="badge bg-success">1</span>
+                            </h6>
+                            
+                            <div class="bg-dark bg-opacity-50 p-3 rounded mb-3 border border-success border-opacity-25 opacity-75">
+                                <span class="badge bg-info mb-2">Medium</span>
+                                <h6 class="text-white text-decoration-line-through">Prepare Action Sheet</h6>
+                                <p class="text-white-50 small mb-2">Weekly law and order review.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-secondary border-opacity-25">
+                                    <small class="text-white-50"><i class="fa-solid fa-user me-1"></i> SHO City</small>
+                                    <small class="text-success"><i class="fa-solid fa-check-circle me-1"></i> Verified</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
